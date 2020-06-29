@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content%}
+{% for item in adv %}
+<hr>
+
+<h2><a href="{{ item.get_absolute_url }}">{{ item.subject }}</a></h2>
+<p>{{ item.price }}</p>
+<p>{{ item.created }}</p>
+<p>{{ item.filter }}</p>
+<hr>
+
+
+{% endfor %}
+
+{% endblock %}
+

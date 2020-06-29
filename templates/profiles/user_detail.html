@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+
+<hr>
+<h3>Добро пожаловать, {{ profile.firstname }}</h3>
+{% if profile.avatar %}
+    <p><img src="{{ profile.avatar.url }}"></p>
+{% endif %}
+<p>{{ profile.lastname }}</p>
+<p>{{ profile.email_two }}</p>
+<p>{{ profile.phone }}</p>
+<p>
+    {% for photo in advdet.images.photos.all %}
+
+    {% if photo.image %}
+    <img src="{{ photo.image.url }}" style="width:200px;">
+    {% endif%}
+
+    {% endfor%}
+
+</p>
+<p>{{ advdet.price }}</p>
+<p>{{ advdet.created }}</p>
+
+<hr>
+
+
+{% endblock %}
+
